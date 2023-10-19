@@ -1,15 +1,16 @@
 @extends('layout')
 @section('content')
+<h1>Edid todo</h1>
 <form action="{{ route('todos-edit', ['id' => $todo->id]) }}" method="post">
     @csrf
     @method('patch')
-    <div>
+    <div class="fillable">
+        <input type="text" name="title" id="title" value="{{ $todo->title }}" require="required" class="txt">
         <label for="title">Title</label>
-        <input type="text" name="title" id="title" value="{{ $todo->title }}">
     </div>
-    <div>
+    <div class="fillable">
+        <textarea name="description" rows="5" id="description" required="required" class="txt">{{ $todo->description }}</textarea>
         <label for="description">Description</label>
-        <input type="text" name="description" id="description" value="{{ $todo->description }}">
     </div>
     <input type="submit" value="Save">
 </form>

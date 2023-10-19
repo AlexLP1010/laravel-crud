@@ -1,0 +1,92 @@
+:root {
+  color-scheme: light dark;
+  --submit-button: #006eff;
+  --delete-button: #d91b2b;
+  --button-color: #f0e5e6;
+  --font-color: #0f0f0f;
+  --background: #fafafa;
+  --container-color: #f0f0f0;
+  --border-color: #c0c0c0;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  color: var(--font-color);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--background);
+}
+
+input[type=submit] {
+  padding: 0.5em;
+  background-color: var(--submit-button);
+  color: var(--button-color);
+  border: none;
+  border-radius: 0.5em;
+}
+
+input[type=submit].btn-delete {
+  background-color: var(--delete-button);
+}
+
+.tasks-container {
+  padding: 0.5em;
+}
+
+.task {
+  padding: 1em;
+  margin: 0 0 1em 0;
+  background: var(--container-color);
+  border: 1px solid var(--border-color);
+  border-radius: 0.5em;
+}
+
+.task>a {
+  text-decoration: none;
+}
+
+.txt {
+  width: 95%;
+  background: none;
+  font-size: 1.2rem;
+  padding: 1em 0.5em;
+  border: 1px solid var(--border-color);
+  border-radius: 0.5em;
+  outline: none;
+  transition-duration: 150ms;
+}
+
+.fillable {
+  position: relative;
+  padding: 1em 0 0 0;
+}
+
+label {
+  position: absolute;
+  left: 0.5em;
+  top: 2em;
+  color: var(--font-color);
+  opacity: 0.7;
+  transition-duration: 150ms;
+}
+
+.txt:focus {
+  border: 1px solid var(--font-color);
+}
+
+.txt:valid ~ label, .txt:focus ~ label{
+  transform: translateX(1em) translateY(-1.7em);
+  padding: 0 0.2em;
+  background-color: var(--background);
+  border-top: none;
+  border-left: 1px solid var(--font-color);
+  border-bottom: none;
+  border-right: 1px solid var(--font-color);
+  opacity: 1;
+}
