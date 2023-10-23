@@ -12,6 +12,6 @@
         <textarea name="description" rows="5" id="description" required="required" class="txt">{{ $todo->description }}</textarea>
         <label for="description">Description</label>
     </div>
-    <input type="submit" value="Save">
+    <input type="submit" value="Save" class="btn">
 </form>
 @endsection
